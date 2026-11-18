@@ -1,0 +1,219 @@
+﻿Summary,Issue key,Issue id,Issue Type,Status,Project key,Project name,Project type,Project lead,Project lead id,Project description,Priority,Resolution,Assignee,Assignee Id,Reporter,Reporter Id,Creator,Creator Id,Created,Updated,Last Viewed,Resolved,Due date,Votes,Labels,Labels,Description,Environment,Watchers,Watchers Id,Original estimate,Remaining Estimate,Time Spent,Work Ratio,Σ Original Estimate,Σ Remaining Estimate,Σ Time Spent,Security Level,Attachment,Custom field (Development),Custom field (Issue color),Custom field (Rank),Custom field (Start date),Custom field (Story point estimate),Custom field (Team),Custom field (Vulnerability),Status category,Status category changed
+Signup accepts a 7-character password although the minimum is 8,ECHO-1,10014,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 10:11 AM,18/Nov/26 10:47 AM,18/Nov/26 10:49 AM,,,0,signup,validation,"*Precondition*
+
+Signup page is open and the user is logged out
+
+*Steps to Reproduce*
+
+# Open the Echoverse Signup page
+# Enter First Name, Last Name, a unique valid email, and the password values from Test Data
+# Click Signup
+
+*Test Data*
+
+First Name: Test
+Last Name: User
+Email: [usertest@gmail.com|mailto:usertest@gmail.com]
+Password: Test@12
+Confirm Password: Test@12
+
+*Severity :* Medium
+
+*Priority*: High
+
+*Expected Result*
+
+Password is not accepted: an error about the minimum length (8 characters) is shown. Account is not created and the user stays on the Signup page
+
+*Actual Result*
+
+Account is created and the user is redirected to the Login page
+
+*Linked test case* : TC_SIGNUP_36
+
+*Environment* :localhost:8000, Chrome, Windows 11",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 10:10 AM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;BUG_SIGNUP_01.mp4;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10001,{},,0|i0002q:,,,,,To Do,18/Nov/26 10:11 AM
+First Name with only spaces is accepted on Signup,ECHO-2,10015,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 10:20 AM,18/Nov/26 10:58 AM,18/Nov/26 10:49 AM,,,0,signup,validation,"*Precondition*
+
+Signup page is open and the user is logged out
+
+*Steps to Reproduce*
+
+# Open the Echoverse Signup page
+# Enter only spaces in First Name and valid values in the other fields
+# Click Signup
+
+*Test Data*
+
+First Name: (only spaces)
+Last Name: User
+Email: <unique valid email>
+Password: Test@1234
+Confirm Password: Test@1234
+
+*Severity*: Medium
+
+*Priority*: High
+
+*Expected Result* 
+
+A name with only spaces is treated as empty: the Signup button stays disabled or an error is shown. Account is not created
+
+*Actual Result*
+
+Account is created and the user is redirected to the Login page
+
+*Linked test case* : TC_SIGNUP_24
+
+*Environment* : localhost:8000, Chrome, Windows",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 10:20 AM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;BUG_SIGNUP_02.mp4;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10003,{},,0|i00031:,,,,,To Do,18/Nov/26 10:20 AM
+Login button keeps its disabled grey look when credentials are autofilled by the browser,ECHO-3,10016,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 10:32 AM,18/Nov/26 10:58 AM,18/Nov/26 10:58 AM,,,0,login,ui,"*Precondition*
+
+Login page is open, the user is logged out and a registered account exists
+
+*Steps to Reproduce*
+
+# Let the browser save the credentials once
+# Open the Login page again
+# Use the autofilled email and password
+# Look at the Login button and click it
+
+*Test Data* 
+
+Saved credentials
+
+*Severity*: Medium
+
+*Priority* : Low
+
+*Expected Result*
+
+Autofilled values enable the Login button and login succeeds
+
+*Actual Result*
+
+Credentials are autofilled, but the Login button keeps its disabled grey look. Clicking it logs in and redirects to the Dashboard
+
+*Linked test case* : TC_LOGIN_47
+
+*Environment* : localhost:8000, Chrome, Windows",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 10:32 AM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;Screenshot 2026-11-18 103111.png;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10005,{},,0|i00034:,,,,,To Do,18/Nov/26 10:32 AM
+Selected tab is not highlighted in the Dashboard sidebar,ECHO-4,10017,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 10:39 AM,18/Nov/26 11:11 AM,18/Nov/26 11:12 AM,,,0,dashboard,ui,"*Precondition*
+
+User is logged in, the Dashboard is open and at least one tab is listed
+
+*Steps to Reproduce*
+
+# Click a tab in the sidebar list
+# Look at the list
+
+*Test Data :* N/A
+
+*Severity* : Medium
+
+*Priority* : Low
+
+*Expected Result* 
+
+The selected tab looks different from the other tabs so the user knows which one is open
+
+*Actual Result* 
+
+The selected tab looks the same as the other tabs
+
+*Linked test case  :* TC_DASH_29
+
+Environment : localhost:8000, Chrome, Windows",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 10:38 AM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;Screenshot 2026-11-18 103825.png;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10007,{},,0|i0003e:,,,,,To Do,18/Nov/26 10:39 AM
+Tab key focus order on the Dashboard is not as expected,ECHO-5,10018,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 11:08 AM,18/Nov/26 11:08 AM,,,,0,dashboard,keyboard,"*Precondition*
+
+User is logged in, the Dashboard is open and at least one tab is listed
+
+*Steps to Reproduce*
+
+# Press the Tab key repeatedly from the top of the page
+# Watch the focus
+
+*Test Data* : N/A
+
+*Severity* : Low
+
+*Priority* : Low
+
+*Expected Result* 
+
+Focus moves in a logical order (collapse icon, New Tab, search, tabs, trash icons, user) and the focused item is visible
+
+*Actual Result* 
+
+Focus moves in the order New Tab, search field, user name. The focused item is visible
+
+*Linked test case  :* TC_DASH_49
+
+Environment : localhost:8000, Chrome, Windows",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 11:08 AM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;BUG_DASH_02.mp4;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10009,{},,0|i0003g:,,,,,To Do,18/Nov/26 11:08 AM
+Tab key focus order on the tab page is not logical,ECHO-6,10019,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 11:32 AM,18/Nov/26 11:32 AM,18/Nov/26 11:33 AM,,,0,keyboard,tab-page,"*Precondition* 
+
+User is logged in and a tab is open (localhost:8000/dashboard/tab/<tab id>)
+
+*Steps to Reproduce*
+
+# Press the Tab key repeatedly from the top of the page
+# Watch the focus
+
+*Test Data* : N/A
+
+*Severity* : Low
+
+*Priority* : Low
+
+*Expected Result* 
+
+Focus moves in a logical order (Lang dropdown, play and Download buttons, text box, paperclip, send) and the focused item is visible
+
+*Actual Result* 
+
+Focus moves in the order Lang dropdown, Copy buttons, play buttons, paperclip, text box. The focused item is visible
+
+*Linked test cases* : TC_TAB_88
+
+*Environment* : localhost:8000, Chrome, Windows",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 11:26 AM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;BUG_TAB_01.mp4;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10011,{},,0|i0003p:,,,,,To Do,18/Nov/26 11:32 AM
+"'Uploaded Image' window closes only with the X icon, not by clicking outside or pressing Esc",ECHO-7,10020,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 12:08 PM,18/Nov/26 12:08 PM,,,,0,tab-page,,"*Precondition*
+The 'Uploaded Image' window is open
+
+*Steps to reproduce*
+
+# Click outside the window
+# Open it again and press the Esc key
+
+*Test Data :* N/A
+
+*Severity* : Low
+
+*Priority* : Low
+
+*Expected result*
+Note which actions close the window; the page must not freeze. (Usability suggestion: clicking outside or pressing Esc should also close it)
+
+*Actual result*
+Only the X icon closes the window. Clicking outside and pressing Esc do not close it. The page does not freeze.
+
+*Linked test case*
+TC_TAB_51 (Exploratory)
+
+*Environment* : localhost:8000 , Chrome ,Windows",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 12:07 PM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;BUG_TAB_02.mp4;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10013,{},,0|i0003q:,,,,,To Do,18/Nov/26 12:08 PM
+Picture preview in chat bubble cuts off the edges of the text in the image,ECHO-8,10021,Bug,To Do,ECHO,Echoverse Bug Tracker,software,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,Medium,,,,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,18/Nov/26 12:15 PM,18/Nov/26 12:15 PM,,,,0,tab-page,,"*Precondition*
+User is logged in and a tab is open that has an uploaded image
+
+*Steps to reproduce*
+
+# Look at the small picture in the chat bubble
+
+*Severity* : Low
+
+*Priority* ; Low
+
+*Expected result*
+The preview shows the picture. (Usability suggestion: the text in the picture should not be cut off in the preview)
+
+*Actual result*
+The preview shows the picture but the edges of the text are cut off. The full picture is visible only in the 'Uploaded Image' window.
+
+*Linked test case :* TC_TAB_53 (Exploratory)
+
+*Environment* : localhost:8000 , chrome , window ",,Mahrukh Khan,712020:a2d78877-fff7-4ff6-866a-5a0237bd556c,,,,,,,,,18/Nov/26 12:15 PM;e1a2a27f-a2a6-4311-9418-1a0056a8654a;Screenshot 2026-11-18 121507.png;https://echoverse-bug-report.atlassian.net/rest/api/3/attachment/content/10015,{},,0|i0003y:,,,,,To Do,18/Nov/26 12:15 PM
